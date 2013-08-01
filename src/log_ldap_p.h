@@ -20,9 +20,13 @@ static char *ldap_homedirectory;
 static char *ldap_version_s;
 static int ldap_version;
 static char *default_uid_s;
-static uid_t default_uid;
+static char *force_default_uid_s;
+static int force_default_uid = 0;
+static uid_t default_uid = 0;
 static char *default_gid_s;
-static gid_t default_gid;
+static char *force_default_gid_s;
+static int force_default_gid = 0;
+static gid_t default_gid = 0;
 static char *use_tls_s;
 static int use_tls;
 static char *ldap_auth_method_s;
@@ -38,7 +42,9 @@ static ConfigKeywords ldap_config_keywords[] = {
     { "LDAPHomeDir", &ldap_homedirectory },
     { "LDAPVersion", &ldap_version_s },
     { "LDAPDefaultUID", &default_uid_s },
+    { "LDAPForceDefaultUID", &force_default_uid_s },
     { "LDAPDefaultGID", &default_gid_s },
+    { "LDAPForceDefaultGID", &force_default_gid_s },
     { "LDAPUseTLS", &use_tls_s },
     { "LDAPAuthMethod", &ldap_auth_method_s },
     { NULL, NULL }
